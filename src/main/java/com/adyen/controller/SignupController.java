@@ -35,6 +35,9 @@ public class SignupController extends BaseController {
         try {
 
             LegalEntity legalEntity = getLegalEntityManagementAPIService().create(individualSignup);
+            
+            System.out.println("below is the legalEntity:");
+            System.out.println(legalEntity);
 
             AccountHolder accountHolder = getConfigurationAPIService().createAccountHolder(legalEntity.getId());
 

@@ -100,6 +100,10 @@ public class ConfigurationAPIService {
                     .legalEntityId(legalEntityId)
                     .description("Liable account holder")
                     .reference("SAMPLE-APP-" + UUID.randomUUID());
+            
+            System.out.println("below is the account holder Info:");
+            System.out.println(accountHolderInfo);
+
             accountHolder = getAccountHoldersApi().createAccountHolder(accountHolderInfo);
 
         } catch (Exception e) {
@@ -164,6 +168,10 @@ public class ConfigurationAPIService {
 
     // AccountHoldersApi handler
     private AccountHoldersApi getAccountHoldersApi() {
+
+        System.out.println("below is the getApiClient(): ");
+        System.out.println(getApiClient());
+
         return new AccountHoldersApi(getApiClient());
     }
 
@@ -185,6 +193,9 @@ public class ConfigurationAPIService {
                     applicationProperty.getBclApiKey(),
                     Environment.TEST); // change to LIVE on prod
         }
+
+        System.out.println("below is the getBclAPIkey() under ConfigurationAPIService.java ");
+        System.out.println(applicationProperty.getBclApiKey());
 
         return apiClient;
     }

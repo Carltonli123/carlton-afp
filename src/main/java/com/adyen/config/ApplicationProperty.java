@@ -35,6 +35,8 @@ public class ApplicationProperty {
     }
 
     public String getBclApiKey() {
+        System.out.println("this is getBclApiKey() under ApplicationProperty.java");
+        System.out.println(bclApiKey);
         return bclApiKey;
     }
 
